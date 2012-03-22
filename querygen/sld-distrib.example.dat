@@ -1,0 +1,6 @@
+# Comments begin with hash
+# File structure, one entry per row
+# Two columns, separated by tab
+# Prob<TAB>value
+0.5	example.net
+0.5	example.com

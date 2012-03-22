@@ -3,8 +3,8 @@ HIT_RATIO=0.45
 EDNS_RATIO=0.80
 DO_BIT_RATIO=0.79
 RECURS_RATIO=0.65
-EDNS_BUF_FILE=edns-buffer-size-mx.dat
-QTYPE_DISTRIB_FILE=qtype-mx.dat
+EDNS_BUF_FILE=edns-buffer-size.example.dat
+QTYPE_DISTRIB_FILE=qtype.example.dat
 # NORMAL
 #HIT_RATIO=0.92
 #EDNS_RATIO=0.56
@@ -13,10 +13,10 @@ QTYPE_DISTRIB_FILE=qtype-mx.dat
 #EDNS_BUF_FILE=edns-buffer-size-normal.dat
 #QTYPE_DISTRIB_FILE=qtype-normal.dat
 ###
-NUM_QUERIES=1000000
+NUM_QUERIES=1000
 HIT_NAMES_FILE=
 MISS_NAMES_FILE=
-MISS_GEN=${HOME}/nzrs/querygen-rb/miss-name-generator.rb
+MISS_GEN=./miss-name-generator.rb
 GEN_OPTS=--num-queries=${NUM_QUERIES} --edns-ratio=${EDNS_RATIO} \
         --do-bit-ratio=${DO_BIT_RATIO} --recursive-ratio=${RECURS_RATIO} \
         --hit-ratio=${HIT_RATIO} \
@@ -24,8 +24,8 @@ GEN_OPTS=--num-queries=${NUM_QUERIES} --edns-ratio=${EDNS_RATIO} \
         --qtype-distrib-file=${QTYPE_DISTRIB_FILE} \
         --hit-names-file=hit-names.txt \
         --miss-names-file=miss-names.txt
-GEN_DEPS= edns-buffer-size.dat \
-          qtype.dat \
+GEN_DEPS= ${EDNS_BUF_FILE} \
+          ${QTYPE_DISTRIB_FILE} \
           hit-names.txt \
           miss-names.txt
 

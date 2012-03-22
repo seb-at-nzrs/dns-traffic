@@ -1,0 +1,38 @@
+Dependencies
+- The query generator requires the packages GSL (GNU Scientific Library)
+  and JSON library
+
+Make sure you have the following files
+- sld-distrib.txt
+- edns-buffer-size.dat
+
+The presentation 'DNS-traffic-framework.pdf' contains a walk-trough
+about how to use the code.
+
+Quick walk-trough
+-----------------
+
+If you don't want to check the presentation, you can be on your way with
+the following steps
+
+1. Prepare a sld-distrib.txt file. There is a sld-distrib.example.txt
+file that's self-explanatory.
+2. make ZONEFILE=zonefile miss-names.txt
+This will take the zone file named "zonefile" and will extract a list of
+names that do exists. That will be used to prepare a "miss names" file
+with labels that will generate negative answers.
+3. Prepare your own query type distribution file. The qtype.example.dat
+provides a sample of how that file looks like.
+4. Prepare your own EDNS buffer size distribution file. The
+edns-buffer-size.example.dat provides a sample of how that file looks
+like
+5. Change the Makefile to set values for HIT_RATIO, EDNS_RATIO,
+DO_BIT_RATIO, and RECURS_RATIO
+6. make query-list.dat
+
+
+
+Feel free to make comments about design or implementation.
+
+Sebastian Castro
+sebastian@nzrs.net.nz

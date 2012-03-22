@@ -1,0 +1,7 @@
+# Probability distribution file for EDNS buffer size
+# Format: Probability<TAB>buffer size
+# Probabilities has to sum 1
+0.1	512
+0.3	1024
+0.3	2048
+0.3	4096

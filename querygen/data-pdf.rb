@@ -20,6 +20,7 @@ class DataPDF
         file_h.each do |line|
             line.chomp!
             # Skip comments or empty lines
+            next if (line =~ /^\s*$/ || line =~ /^#/);
             
             # Each line contain a probability and key
             elem = line.split(/\t/)
